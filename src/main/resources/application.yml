@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: Buscador
+  mvc:
+    cors:
+      allowed-origins: "*"
+      allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+
+elasticsearch:
+  host: homework-7162395910.us-east-1.bonsaisearch.net
+  port: 443
+  username: QUHuFxVP6h
+  password: qnUp8Hd6JN2LBzSbFxG9
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone:
+        ${eureka_url:http://localhost:8761/eureka/}
+
+  instance:
+    prefer-ip-address: false
