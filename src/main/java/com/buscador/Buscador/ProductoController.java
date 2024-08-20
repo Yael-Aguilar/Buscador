@@ -1,5 +1,6 @@
 package com.buscador.Buscador;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -8,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api")
+@Slf4j
 public class ProductoController {
 
     @Autowired
@@ -30,6 +32,7 @@ public class ProductoController {
 
     @GetMapping("/todosLosProductos")
     public ResponseEntity<List<Producto>> listAllProducts() {
+        log.info("reached this");
         List<Producto> productos = elasticSearchService.listaDeTodosLosProductos();
         if (productos != null) {
             return ResponseEntity.ok(productos);
